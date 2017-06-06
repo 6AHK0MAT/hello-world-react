@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import './App.css';
-import Header from "./Header";
+//import Header from "./Header";
+//import RegistrationForm from './RegistrationForm'
 
 //import Dropdown from "./Dropdown";
 
+/*
 const menu = [
     {
         link: '/article',
@@ -18,12 +20,24 @@ const menu = [
         label: 'Posts'
     }
 ]
+*/
 
 class App extends Component {
+    submit(){
+        console.log('submit', this.testInput.value);
+    }
   render() {
-    return (<div>
+    return (
+        <div>
+            <input type="text" placeholder="test" ref={(input) => this.testInput = input} />
+            <button onClick={this.submit.bind(this)}>Submit</button>
+        </div>
+/*
+        <div className="container">
         <Header items={menu}/>
-    </div>
+            <RegistrationForm/>
+        </div>
+*/
     )
   }
 }
